@@ -24,12 +24,19 @@ namespace PierresVendors.Controllers
       Vendor newVendor = new Vendor(name, description);
       return RedirectToAction("Index", "Home");
     }
-    [HttpGet("/vendor/{name}")]
-    public ActionResult Show(string name)
+    [HttpGet("/vendor/{vendorName}")]
+    public ActionResult Show(string vendorName)
     {
-      Vendor foundVendor = Vendor.FindVendor(name);
-      // Vendor foundVendor = new Vendor(name, "description");
+      Vendor foundVendor = Vendor.FindVendor(vendorName);
       return View(foundVendor);
+    }
+    [HttpPost("/vendor/{vendorName}/order")]
+    public ActionResult Create(string vendorName, string title, string description, string price)
+    {
+      Vendor foundVendor = Vendor.FindVendor(vendorName);
+      Order newOrder = new Order(title, description, int.Parse(price));
+      foundVendor.AddOrder(newOrder);
+      return View("Show", foundVendor);
     }
   }
 }

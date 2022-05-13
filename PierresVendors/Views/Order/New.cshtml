@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+<form action="/vendor/@Model.Name/order" method="post">
+  
+  <label for="title">Title</label>
+  <input name="title" id="title" type="text">
+
+  <label for="description">Description</label>
+  <input name="description" id="description" type="text">
+  
+  <label for="price">Price</label>
+  <input name="price" id="price" type="number">
+  
+  <input id="vendorName" name="vendorName" type="hidden" value="@Model.Name">
+  
+  <button type="submit" class="btn btn-info">Submit</button>
+</form>
