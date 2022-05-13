@@ -6,5 +6,11 @@ namespace PierresVendors.Models
     public string Description { get; }
     public int Price { get; }
 
+    public Order(string title, string description, int price)
+    {
+      Title = title;
+      Description = description;
+      Price = price;
+    }
   }
 }
