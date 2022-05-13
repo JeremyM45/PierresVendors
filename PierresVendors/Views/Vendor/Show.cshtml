@@ -2,8 +2,8 @@
   Layout = "_Layout";
 }
 @using PierresVendors.Models
-<h3>Name: @Model.Name</h3>
-<h3>@Model.Description</h6>
+<h3>@Model.Name</h3>
+<h5>@Model.Description</h5>
 
 @if(Model.Orders.Count == 0)
 {
@@ -11,8 +11,8 @@
 }
 @foreach (Order order in Model.Orders)
 {
-  <ul>
-    <li><a href="/vendor/@Model.Name/order/@order.Id">@order.Title</a></li>
-  </ul>
+  <h5><a href="/vendor/@Model.Name/order/@order.Id">@order.Title</a></h5>
 }
-<a href="/vendor/@Model.Name/order/new"><button class="btn btn-success">Add New Order</button></a>
+<a href="/vendor/@Model.Name/order/new"><button class="btn btn-primary">Add New Order</button></a>
+<a href="/"><button class="btn btn-danger">Home</button></a>
+<a href="/vendor"><button class="btn btn-info">Back To Vendor List</button></a>

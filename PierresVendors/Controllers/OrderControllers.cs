@@ -18,6 +18,7 @@ namespace PierresVendors.Controllers
     {
       Vendor foundVendor = Vendor.FindVendor(vendorName);
       Order foundOrder = foundVendor.FindOrder(int.Parse(orderId));
+      ViewBag.VendorName = vendorName;
       return View(foundOrder);
     }
   }

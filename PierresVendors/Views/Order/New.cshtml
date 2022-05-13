@@ -1,6 +1,7 @@
 @{
   Layout = "_Layout";
 }
+<h3>Create A Order For @Model.Name</h3>
 <form action="/vendor/@Model.Name/order" method="post">
   <label for="title">Title</label>
   <input name="title" id="title" type="text">
@@ -13,3 +14,5 @@
   <input id="vendorName" name="vendorName" type="hidden" value="@Model.Name">
   <button type="submit" class="btn btn-info">Submit</button>
 </form>
+<a href="/vendor/@Model.Name"><button class="btn btn-primary">Back to @Model.Name's Orders</button></a>
+<a href="/"><button class="btn btn-danger">Home</button></a>
