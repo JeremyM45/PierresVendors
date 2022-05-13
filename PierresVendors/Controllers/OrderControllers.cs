@@ -13,5 +13,12 @@ namespace PierresVendors.Controllers
       Vendor foundVendor = Vendor.FindVendor(vendorName);
       return View(foundVendor);
     }
+    [HttpGet("/vendor/{vendorName}/order/{orderId}")]
+    public ActionResult Show(string vendorName, string orderId)
+    {
+      Vendor foundVendor = Vendor.FindVendor(vendorName);
+      Order foundOrder = foundVendor.FindOrder(int.Parse(orderId));
+      return View(foundOrder);
+    }
   }
 }

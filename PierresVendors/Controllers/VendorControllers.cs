@@ -31,10 +31,10 @@ namespace PierresVendors.Controllers
       return View(foundVendor);
     }
     [HttpPost("/vendor/{vendorName}/order")]
-    public ActionResult Create(string vendorName, string title, string description, string price)
+    public ActionResult Create(string vendorName, string title, string description, string price, string date)
     {
       Vendor foundVendor = Vendor.FindVendor(vendorName);
-      Order newOrder = new Order(title, description, int.Parse(price));
+      Order newOrder = new Order(title, description, int.Parse(price), date);
       foundVendor.AddOrder(newOrder);
       return View("Show", foundVendor);
     }

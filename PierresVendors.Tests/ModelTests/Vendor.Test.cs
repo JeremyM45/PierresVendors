@@ -44,5 +44,14 @@ namespace PierresVendors.Tests
       Assert.AreEqual(1, newVendor.Orders.Count);
       Assert.AreEqual(newOrder, newVendor.Orders[0]);
     }
+    [TestMethod]
+    public void FindOrder_ShouldReturnTheOrderWithMatchingId_Order()
+    {
+      Vendor newVendor = new Vendor("name", "des");
+      Order newOrder = new Order("test name", "test des", 1);
+      newVendor.AddOrder(newOrder);
+      Order foundOrder = newVendor.FindOrder(newOrder.Id);
+      Assert.AreEqual(newOrder, foundOrder);
+    }
   }
 }

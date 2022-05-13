@@ -37,7 +37,19 @@ namespace PierresVendors.Models
     }
     public void AddOrder(Order newOrder)
     {
+      newOrder.Id = Orders.Count;
       Orders.Add(newOrder);
+    }
+    public Order FindOrder(int id)
+    {
+      foreach (Order order in Orders)
+      {
+        if(order.Id == id)
+        {
+          return order;
+        }
+      }
+      return null;
     }
   }
 }
