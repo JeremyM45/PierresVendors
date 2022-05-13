@@ -13,6 +13,15 @@ namespace PierresVendors.Models
     {
       Name = name;
       Description = description;
+      _allVendors.Add(this);
+    }
+    public static List<Vendor> GetVendors()
+    {
+      return _allVendors;
+    }
+    public static void ClearAll()
+    {
+      _allVendors.Clear();
     }
   }
 }
