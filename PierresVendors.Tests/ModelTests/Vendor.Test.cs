@@ -35,13 +35,14 @@ namespace PierresVendors.Tests
       Assert.AreEqual(thisOne, foundVendor);
       Assert.AreEqual(thisOne.Description, foundVendor.Description);
     }
-    // [TestMethod]
-    // public void AddOrder_ShouldAddAnOrderToAVendorsListOfOrders_Vendor()
-    // {
-    //   Vendor newVendor = new Vendor("name", "des");
-    //   Order newOrder = new Order("test name", "test des");
-    //   newVendor.AddOrder(newOrder);
-    //   Assert.AreEqual(1, newVendor.Orders.Count);
-    // }
+    [TestMethod]
+    public void AddOrder_ShouldAddAnOrderToAVendorsListOfOrders_Vendor()
+    {
+      Vendor newVendor = new Vendor("name", "des");
+      Order newOrder = new Order("test name", "test des", 1);
+      newVendor.AddOrder(newOrder);
+      Assert.AreEqual(1, newVendor.Orders.Count);
+      Assert.AreEqual(newOrder, newVendor.Orders[0]);
+    }
   }
 }

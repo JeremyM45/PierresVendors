@@ -13,6 +13,7 @@ namespace PierresVendors.Models
     {
       Name = name;
       Description = description;
+      Orders = new List<Order>{};
       _allVendors.Add(this);
     }
     public static List<Vendor> GetVendors()
@@ -33,6 +34,10 @@ namespace PierresVendors.Models
         }
       }
       return null;
+    }
+    public void AddOrder(Order newOrder)
+    {
+      Orders.Add(newOrder);
     }
   }
 }
