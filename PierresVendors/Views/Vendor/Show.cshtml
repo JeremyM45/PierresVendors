@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+@using PierresVendors.Models
+<h4>Name: @Model.Name</h4>
+<h6>@Model.Description</h6>
+
+@if(Model.Orders.Count == 0)
+{
+  <h5>@Model.Name Has No Orders Yet</h5>
+}
+@foreach (Order order in Model.Orders)
+{
+  <ul>
+    <li>Title: order.Title</li>
+    <li>Description: order.Description</li>
+    <li>Price: $order.Price</li>
+  </ul>
+}

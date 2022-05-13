@@ -24,5 +24,12 @@ namespace PierresVendors.Controllers
       Vendor newVendor = new Vendor(name, description);
       return RedirectToAction("Index", "Home");
     }
+    [HttpGet("/vendor/{name}")]
+    public ActionResult Show(string name)
+    {
+      Vendor foundVendor = Vendor.FindVendor(name);
+      // Vendor foundVendor = new Vendor(name, "description");
+      return View(foundVendor);
+    }
   }
 }
