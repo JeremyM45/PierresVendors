@@ -1,0 +1,27 @@
+#left-col {
+  background-color: blue;
+}
+#right-col {
+  background-color: rgb(255, 0, 0);
+  flex-grow: 1;
+}
+.row {
+  height: 100vh;
+  display:flex;
+}
+body {
+  text-align: center;
+}
+button {
+  margin-top: 10%;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+h3 {
+  margin-top: 10%;
+}
+label {
+  margin-top: 10%;
+  margin-left: 6%;
+  left: 10px;
+}

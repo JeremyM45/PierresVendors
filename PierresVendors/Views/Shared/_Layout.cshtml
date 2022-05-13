@@ -4,9 +4,20 @@
     <meta charset="utf-8">
     <title>Pierre's Vendors</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="~/css/styles.css">
+    <link href="~/css/site.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    @RenderBody()
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-4" id="left-col">
+        </div>
+        <div class="col-xl-4">
+          @RenderBody()
+          
+        </div>
+        <div class="col-xl-4" id="right-col">
+        </div>
+      </div>
+    </div>
   </body>
 </html>
