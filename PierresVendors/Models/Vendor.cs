@@ -23,5 +23,16 @@ namespace PierresVendors.Models
     {
       _allVendors.Clear();
     }
+    public static Vendor FindVendor(string vendorName)
+    {
+      foreach (Vendor vendor in _allVendors)
+      {
+        if(vendor.Name == vendorName)
+        {
+          return vendor;
+        }
+      }
+      return null;
+    }
   }
 }

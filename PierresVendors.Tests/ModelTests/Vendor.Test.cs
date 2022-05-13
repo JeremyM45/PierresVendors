@@ -29,18 +29,19 @@ namespace PierresVendors.Tests
     [TestMethod]
     public void FindVendor_ShouldReturnASpecificVendorFromName_Vendor()
     {
-      Vendor thisOne = new Vendor("this one", "des");
-      Vendor notThisOne = new Vendor("not this one", "des");
+      Vendor thisOne = new Vendor("this one", "this des");
+      Vendor notThisOne = new Vendor("not this one", "not this des");
       Vendor foundVendor = Vendor.FindVendor("this one");
       Assert.AreEqual(thisOne, foundVendor);
+      Assert.AreEqual(thisOne.Description, foundVendor.Description);
     }
-    [TestMethod]
-    public void AddOrder_ShouldAddAnOrderToAVendorsListOfOrders_Vendor()
-    {
-      Vendor newVendor = new Vendor("name", "des");
-      Order newOrder = new Order("test name", "test des");
-      newVendor.AddOrder(newOrder);
-      Assert.AreEqual(1, newVendor.Orders.Count);
-    }
+    // [TestMethod]
+    // public void AddOrder_ShouldAddAnOrderToAVendorsListOfOrders_Vendor()
+    // {
+    //   Vendor newVendor = new Vendor("name", "des");
+    //   Order newOrder = new Order("test name", "test des");
+    //   newVendor.AddOrder(newOrder);
+    //   Assert.AreEqual(1, newVendor.Orders.Count);
+    // }
   }
 }
