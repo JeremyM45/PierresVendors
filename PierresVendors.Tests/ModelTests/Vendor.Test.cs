@@ -39,7 +39,7 @@ namespace PierresVendors.Tests
     public void AddOrder_ShouldAddAnOrderToAVendorsListOfOrders_Vendor()
     {
       Vendor newVendor = new Vendor("name", "des");
-      Order newOrder = new Order("test name", "test des", 1);
+      Order newOrder = new Order("test name", "test des", 1, "10/10/2010");
       newVendor.AddOrder(newOrder);
       Assert.AreEqual(1, newVendor.Orders.Count);
       Assert.AreEqual(newOrder, newVendor.Orders[0]);
@@ -48,7 +48,7 @@ namespace PierresVendors.Tests
     public void FindOrder_ShouldReturnTheOrderWithMatchingId_Order()
     {
       Vendor newVendor = new Vendor("name", "des");
-      Order newOrder = new Order("test name", "test des", 1);
+      Order newOrder = new Order("test name", "test des", 1, "10/10/2010");
       newVendor.AddOrder(newOrder);
       Order foundOrder = newVendor.FindOrder(newOrder.Id);
       Assert.AreEqual(newOrder, foundOrder);

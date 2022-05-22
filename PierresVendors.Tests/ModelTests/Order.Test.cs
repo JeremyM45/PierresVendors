@@ -10,7 +10,7 @@ namespace PierresVendors.Tests
     [TestMethod]
     public void Order_ShouldCreateAnObjectOfTypeOrder_Order()
     {
-      Order newOrder = new Order("title", "des", 1);
+      Order newOrder = new Order("title", "des", 1, "10/10/2010");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
   }
